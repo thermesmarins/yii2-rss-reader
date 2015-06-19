@@ -13,7 +13,7 @@ use yii\helpers\ArrayHelper;
 class RssReader extends \yii\base\Widget {
 
     public $channel;
-    public $itemView  = 'item';
+    public $itemView  = 'entry';
     public $pageSize  = 20;
     public $wrapClass = 'rss-wrap';
     public $wrapTag   = 'div';
