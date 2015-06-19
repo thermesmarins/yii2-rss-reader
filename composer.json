@@ -1,5 +1,5 @@
 {
-    "name": "tugmaks/yii2-rss-reader",
+    "name": "davidjeddy/yii2-rss-reader",
     "description": "Rss reader widget for Yii2",
     "type": "yii2-extension",
     "keywords": ["yii2","extension"," rss"," rss reader"],
@@ -8,6 +8,10 @@
         {
             "name": "Maxim Tugaev",
             "email": "tugmaks@yandex.ru"
+        },
+        {
+            "name": "David J Eddy",
+            "email": "me@davidjeddy.com"
         }
     ],
     "require": {
@@ -15,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "tugmaks\\RssFeed\\": ""
+            "davidjeddy\\RssFeed\\": ""
         }
     }
 }
