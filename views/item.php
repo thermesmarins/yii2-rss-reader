@@ -5,18 +5,16 @@ use yii\i18n\Formatter;
 
 ?>
 <div class="well clearfix">
-	<h2 class="article-title">
+	<h2>
         <a href="<?php echo $model->link[0]['href']['0'] ?>"><?php echo $model->title; ?></a>
     </h2>
-	<div class="article-meta">
-        <span class="article-date">
-            <?php echo Yii::$app->formatter->asDatetime($model->published); ?>
-        </span>
-    </div>
-	<div class="article-content">
+	<p class="text-muted">
+        <?php echo Yii::$app->formatter->asDatetime($model->published); ?>
+    </p>
+	<p>
         <?php echo $model->content; ?>
-    </div>
-	<div class="article-footer">
+    </p>
+	<p>
         <?php echo Html::a(Yii::t('news', 'Read More...'),
               $model->link[0]['href']['0'],
               [
@@ -24,5 +22,5 @@ use yii\i18n\Formatter;
                 'class' => 'btn btn-primary pull-right'
               ] );
         ?>
-    </div>
+    </p>
 </div>
