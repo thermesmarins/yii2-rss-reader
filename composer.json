@@ -2,7 +2,7 @@
     "name": "davidjeddy/yii2-rss-reader",
     "description": "RSS reader widget for Yii2",
     "type": "view widget",
-    "keywords": ["yii2", "widget"," rss",],
+    "keywords": ["yii2", "widget"," rss"],
     "minimum-stability": "stable",
     "license": "BSD-2-Clause",
     "authors": [
