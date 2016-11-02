@@ -19,7 +19,7 @@ class RssReader extends \yii\base\Widget {
     public function run() {
         try {
             $items = [];
-            $xml   = @simplexml_load_file($this->channel); // suppress errors if feed is invalid
+            $xml   = simplexml_load_file($this->channel); // suppress errors if feed is invalid
 
             if ($xml === false) {
                 return 'Error parsing feed source: ' . $this->channel;
