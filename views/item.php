@@ -1,7 +1,6 @@
 <?php
 
 use yii\helpers\Html;
-use yii\i18n\Formatter;
 
 ?>
 <div class="well clearfix">
