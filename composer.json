@@ -16,11 +16,11 @@
     }
   ],
   "require": {
-    "yiisoft/yii2": "^2.0.10"
+    "yiisoft/yii2": "^2"
   },
   "autoload": {
     "psr-4": {
-      "davidjeddy\\RssFeed\\": ""
+      "davidjeddy\\RssFeed\\": "./src"
     }
   }
 }

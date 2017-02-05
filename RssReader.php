@@ -29,7 +29,7 @@ class RssReader extends \yii\base\Widget {
                 $items[] = $item;
             }
 
-            \yii\helpers\ArrayHelper::multisort($items, function($item) {
+            \yii\helpers\ArrayHelper::multisort($items, function(\SimpleXMLElement $item) {
                 return $item->published;
             }, SORT_ASC);
 
