@@ -5,6 +5,7 @@ RSS reader widget for Yii2.
 Badges
 -----
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/ee1d3eaa-531a-45c6-9ba9-d6b6dda61d6e/mini.png)](https://insight.sensiolabs.com/projects/ee1d3eaa-531a-45c6-9ba9-d6b6dda61d6e)
 [![Latest Stable Version](https://poser.pugx.org/davidjeddy/yii2-rss-reader/v/stable?format=flat-square)](https://packagist.org/packages/davidjeddy/yii2-rss-reader)
 [![Latest Unstable Version](https://poser.pugx.org/davidjeddy/yii2-rss-reader/v/unstable?format=flat-square)](https://packagist.org/packages/davidjeddy/yii2-rss-reader)
 [![License](https://poser.pugx.org/davidjeddy/yii2-rss-reader/license?format=flat-square)](https://packagist.org/packages/davidjeddy/yii2-rss-reader)
