@@ -1,6 +1,6 @@
 <?php
 
-namespace davidjeddy\RssFeed;
+namespace thermesmarins\RssFeed;
 
 /**
  * This is just an example.
