@@ -1,5 +1,5 @@
 {
-  "name": "davidjeddy/yii2-rss-reader",
+  "name": "thermesmarins/yii2-rss-reader",
   "description": "RSS reader widget for Yii2",
   "type": "library",
   "keywords": ["yii2", "widget"," rss"],
