@@ -28,7 +28,7 @@ class RssReader extends \yii\base\Widget {
 			$xml = simplexml_load_file( $this->channel ); // suppress errors if feed is invalid
 
 			if ( $xml === false ) {
-				return \yii\Helpers\Html::encode( $errorMessage );
+				return \yii\helpers\Html::encode( $errorMessage );
 			}
 
 			foreach ( $xml->xpath( $this->itemsPath ) as $item ) {
