@@ -11,11 +11,9 @@ class RssReader extends \yii\base\Widget {
 
 	public $channel;
 	public $itemView = 'item';
-	public $pageSize = 20;
+	public $pageSize = 10;
 	public $wrapClass = 'rss-wrap';
 	public $wrapTag = 'div';
-	public $indexName = 'entry';
-	public $errorMessage = 'Error parsing feed source';
 
 	public function run() {
 		try {
@@ -28,7 +26,7 @@ class RssReader extends \yii\base\Widget {
 			$xml = simplexml_load_file( $this->channel ); // suppress errors if feed is invalid
 
 			if ( $xml === false ) {
-				return \yii\helpers\Html::encode( $errorMessage );
+				return Yii::t( 'rss', 'Error parsing feed source: {channel}', [ 'channel' => $this->channel ] );
 			}
 
 			foreach ( $xml->xpath( $this->itemsPath ) as $item ) {
