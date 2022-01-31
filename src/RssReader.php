@@ -9,43 +9,45 @@ namespace thermesmarins\RssFeed;
  */
 class RssReader extends \yii\base\Widget {
 
-    public $channel;
-    public $itemView  = 'item';
-    public $pageSize  = 20;
-    public $wrapClass = 'rss-wrap';
-    public $wrapTag   = 'div';
-    public $indexName = 'entry';
+	public $channel;
+	public $itemView = 'item';
+	public $pageSize = 20;
+	public $wrapClass = 'rss-wrap';
+	public $wrapTag = 'div';
+	public $indexName = 'entry';
+	public $errorMessage = 'Error parsing feed source';
 
-    public function run() {
-        try {
-            $items = [];
-            $xml   = simplexml_load_file($this->channel); // suppress errors if feed is invalid
+	public function run() {
+		try {
+			$items = [];
 
-            if ($xml === false) {
-                return 'Error parsing feed source: ' . $this->channel;
-            }
+			if ( empty ( $this->channel ) ) {
+				return '';
+			}
 
-            foreach ($xml->{$this->indexName} as $item) {
-                $items[] = $item;
-            }
+			$xml = simplexml_load_file( $this->channel ); // suppress errors if feed is invalid
 
-            \yii\helpers\ArrayHelper::multisort($items, function(\SimpleXMLElement $item) {
-                return $item->published;
-            }, SORT_ASC);
+			if ( $xml === false ) {
+				return \yii\Helpers\Html::encode( $errorMessage );
+			}
 
-            // return data to VW as dataProvider
-            return $this->render(
-                'wrap',
-                [
-                    'dataProvider' => new \yii\data\ArrayDataProvider([
-                        'allModels'  => $items,
-                        'pagination' => [
-                            'pageSize' => $this->pageSize,
-                        ],
-                    ])
-                ]);
-        } catch (\Exception $e) {
-            return $e->getMessage();
-        }
-    }
+			foreach ( $xml->xpath( $this->itemsPath ) as $item ) {
+				$items[] = $item;
+			}
+
+			// Return data to dataProvider
+			return $this->render(
+				'wrap',
+				[
+					'dataProvider' => new \yii\data\ArrayDataProvider( [
+						'allModels'  => $items,
+						'pagination' => [
+							'pageSize' => $this->pageSize,
+						],
+					] ),
+				] );
+		} catch ( \Exception $e ) {
+			return $e->getMessage();
+		}
+	}
 }
