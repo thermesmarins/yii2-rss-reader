@@ -1,25 +1,19 @@
 <?php
 
 use yii\helpers\Html;
-
+use yii\helpers\HtmlPurifier;
+/* @var $model object */
 ?>
-<div class="well clearfix">
-	<h2>
+<li class="list-group-item">
+	<h4>
 		<a href="<?php echo $model->link ?>" target="_new"><?php echo $model->title; ?></a>
-	</h2>
+	</h4>
 	<p class="text-muted">
 		<?php echo Yii::$app->formatter->asDatetime( $model->pubDate ); ?>
 	</p>
-	<p>
-		<?php echo $model->content; ?>
-	</p>
-	<p>
-		<?php echo Html::a( Yii::t( 'rss', 'Read More...' ),
-			$model->link,
-			[
-				'target' => '_new',
-				'class'  => 'btn btn-primary pull-right',
-			] );
-		?>
-	</p>
-</div>
+	<div class="description">
+		<?php
+		$description_html = $model->description;
+		echo HTMLPurifier::process($description_html); ?>
+	</div>
+</li>
