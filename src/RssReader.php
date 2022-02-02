@@ -12,9 +12,9 @@ class RssReader extends \yii\base\Widget {
 	public $channel;
 	public $itemView = 'item';
 	public $pageSize = 10;
-	public $wrapClass = 'rss-wrap';
-	public $wrapTag = 'div';
 	public $itemsPath = '//item';
+	public $itemOptions = [];
+	public $options = [];
 
 	public function run() {
 		try {
@@ -40,8 +40,8 @@ class RssReader extends \yii\base\Widget {
 				[
 					'dataProvider' => new \yii\data\ArrayDataProvider( [
 						'allModels'  => $items,
-						'totalCount'  => $this->pageSize,
-						'pagination' =>['pageSize' => $this->pageSize],
+						'totalCount' => $this->pageSize,
+						'pagination' => [ 'pageSize' => $this->pageSize ],
 					] ),
 				] );
 		} catch ( \Exception $e ) {
