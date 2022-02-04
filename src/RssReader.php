@@ -30,8 +30,11 @@ class RssReader extends \yii\base\Widget {
 				return Yii::t( 'rss', 'Error parsing feed source: {channel}', [ 'channel' => $this->channel ] );
 			}
 
+			$counter = 1;
 			foreach ( $xml->xpath( $this->itemsPath ) as $item ) {
+				$item->key = $counter;
 				$items[] = $item;
+				$counter++;
 			}
 
 			// Return data to dataProvider
